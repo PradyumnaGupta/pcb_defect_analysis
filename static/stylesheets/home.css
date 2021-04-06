@@ -1,0 +1,32 @@
+html{
+    font-size: 13.5px;
+}
+body{
+    height: 100%;
+}
+.test{
+    margin-left:2rem;
+}
+.upload{
+    height: 20rem;
+}
+.inference{
+    height: 40rem;
+}
+.padd_row{
+    height: 10rem;
+}
+.upload_button{
+    margin-top: 2rem;
+    margin-left: 2.5rem;
+}
+.padd_row_form{
+    margin-top:4rem;
+}
+main{
+    margin-top: 10rem;
+}
+img{
+    padding-bottom:0.8rem;
+    padding-top:0.8rem;
+}

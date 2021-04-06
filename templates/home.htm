@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheets/home.css') }}" crossorigin="anonymous">
+
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <nav class = "navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-box">
+        <div class = "container-fluid">
+          <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img src="/uploads/temp.jpg" alt="Logo" width="50rem" height="50rem" class="img-thumbnail">
+            PCB Defect Analysis Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mr-auto" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class = "placeholders row">
+        <div class="container-fluid col-lg-6">
+          <div class="padd_row"></div>
+          <div class="upload row">
+            <div class="template placeholder col-md-5 offset-md-1 text-light d-flex justify-content-center bg-dark rounded align-middle">
+              {% if test_image %}
+                <img class="img-fluid" src="{{template_image}}" alt="Nothing uploaded">
+              {% else %}
+                Upload Template Image
+              {%endif%}
+            </div>
+            <div class = "test placeholder col-md-5 text-light d-flex justify-content-center bg-dark rounded">
+              {% if template_image %}
+                <img class="img-fluid" src="{{test_image}}" alt="Nothing uploaded">
+              {% else %}
+                Upload Test image
+              {%endif%}
+            </div>
+          </div>
+          <div class="padd_row_form">
+              <form method="POST" enctype="multipart/form-data" action="">
+                <div class = "row gx-0">
+                  <div class="col offset-md-2">
+                    <label for="template_image" ></label>
+                    <input type="file" name="test_image">
+                  </div>
+                  <div class="col offset-md-1">
+                    <label for="test_image" ></label>
+                    <input type="file" name="template_image">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col offset-md-5">
+                    <input class="upload_button" type="submit" value="Upload">
+                  </div>
+                </div>
+              </form>
+          </div>
+        </div>
+        <div class="container-fluid col-md-6">
+          <div class= "inference container row">
+            <div class = "result placeholder col-md-10 offset-md-1 text-light d-flex justify-content-center bg-dark rounded">
+              {% if result_image %}
+                <!-- <div class="row justify-content-center">
+                  Result
+                </div> -->
+                <div class="row">
+                  <img class="img-fluid" src="{{result_image}}" alt="Nothing inferenced">
+                </div>
+              {% else %}
+                Click upload to check the analysis results
+              {%endif%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
