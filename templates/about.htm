@@ -1,0 +1,32 @@
+{% extends "base.htm" %}
+
+{% block content %}
+    <div class="row text-center">
+        <!-- <p class="h1">About</p> -->
+        <h1 class="display-3">About</h1>
+    </div>
+    <br>
+    <br>
+    <div class="row text-center">
+        <p class="lead">
+            This project is developed collectively by Pradyumna Gupta,Shantanu Rawat and Vaibhavi Mishra.
+        </p>
+        <br>
+        <br>
+        <p class="row col-md-8 offset-md-2">
+            PCB Analysis Tool is online PCB defect detection and classification tool that leverages image processing and deep learning algorithms to localize,extract and classify the multiple types of defects present in a printed circuit board.To acheive this feat , our tool takes scanned test and template images of a PCB from the user , which are fed into our pipeline consisting of the following stages:
+        </p>
+        <div class="row">
+            <dl class="row col-md-8 offset-md-2">
+                <dt class="col-md-3">Image Comparison Stage :</dt>
+                <dd class="col-md-9">The test and template images are aligned,compared and subtracted in this stage which helps to highlight the defects in the test image which can be extracted in the nest stage.</dd>
+                
+                <dt class="col-md-3">Defect Extraction Stage :</dt>
+                <dd class="col-md-9">The obtained test image from the last stage undergoes many image processing filters including erosion and dilation after which the contour detection algorithm of the OpenCV library is used to localize and extract the defects from the image which are then collected and sent to the next stage.</dd>
+
+                <dt class="col-md-3">Defect Classification Stage :</dt>
+                <dd class="col-md-9">This is the stage where machine learning inference is done to identify the defects using artificial intelligence (AI). The defects are fed into a convolutional neural network (CNN) ,pre-trained on the DeepPCB dataset, which then uses convolutional filters to process the image features and generate the confidence scores corresponding to the possible defects present in the image. The label with highest confidence score is attached to the particular defect and thus marked on the test image which is then displayed back to the user.</dd>
+            </dl>
+        </div>
+    </div>
+{% endblock content %}

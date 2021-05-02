@@ -40,13 +40,13 @@ def home():
             result = model_inference(model,path1,path2)
             result_image_name = test_image_filename+template_image_filename
             cv2.imwrite(app.config['BUFFER_FOLDER']+result_image_name,result)
-            return render_template('home.htm',test_image=url_for('uploaded_file',filename=test_image_filename),template_image=url_for('uploaded_file',filename=template_image_filename),result_image=url_for('generated_file',filename=result_image_name),time=str(time.time()))
+            return render_template('home.htm',test_image=url_for('uploaded_file',filename=test_image_filename),template_image=url_for('uploaded_file',filename=template_image_filename),result_image=url_for('generated_file',filename=result_image_name),time=str(time.time()),name="home")
     else:
-        return render_template('home.htm',time=str(time.time()))
+        return render_template('home.htm',time=str(time.time()),name="home")
 
 @app.route('/about')
 def about():
-    return render_template('about.htm',test_image=None,template_image=None,result_image=None,time=str(time.time()))
+    return render_template('about.htm',test_image=None,template_image=None,result_image=None,time=str(time.time()),name="about")
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
