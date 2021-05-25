@@ -84,7 +84,7 @@ testpath==0.4.4
 tifffile==2021.3.31
 timm==0.4.5
 torch==1.8.1
-torch-same-pad==0.1.0
+# torch-same-pad==0.1.0
 torchvision==0.9.1
 tornado==6.1
 traitlets==5.0.5
@@ -96,3 +96,4 @@ Werkzeug==1.0.1
 wheel==0.36.2
 WTForms==2.3.3
 zipp==3.4.1
+git+https://github.com/CyberZHG/torch-same-pad.git
