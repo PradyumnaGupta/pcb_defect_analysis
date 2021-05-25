@@ -1,0 +1,7 @@
+__pycache__/
+**/__pycache__
+.vscode
+/uploads
+/model_training
+/temp_buffer
+/saved_weights
