@@ -21,7 +21,7 @@ Flask-CacheBuster==1.0.0
 Flask-WTF==0.14.3
 future==0.18.2
 gym==0.18.0
-h5py==2.10.0
+h5py==3.2.1
 idna==2.10
 imageio==2.9.0
 imgaug==0.4.0
