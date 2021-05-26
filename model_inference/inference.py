@@ -106,7 +106,7 @@ def model_inference(model,path_1,path_2):
 
 def load_model():
     model = Net()
-    model.load_state_dict(torch.load('saved_weights/effb4-0.9722.pth'))
+    model.load_state_dict(torch.load('saved_weights/effb4-0.9722.pth',map_location=torch.device('cpu')))
     model.eval()
     # model.cuda()
     return model

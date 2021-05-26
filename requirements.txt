@@ -1,4 +1,4 @@
-albumentations==0.4.3
+albumentations==0.5.2
 Flask==1.1.2
 Flask-CacheBuster==1.0.0
 Flask-WTF==0.14.3
